@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Expense Tracker</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 500px; margin: 20px auto; background-color: #f4f7f6; }
+    h2, h3 { color: #333; }
+    input, select, button { padding: 10px; margin: 5px 0; width: 100%; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; }
+    button { background-color: #5cb85c; color: white; border: none; cursor: pointer; font-size: 16px; }
+    button:hover { background-color: #4cae4c; }
+    #expenseList div { padding: 8px; border-bottom: 1px solid #ddd; display: flex; justify-content: space-between; align-items: center; }
+    #expenseList div:nth-child(even) { background-color: #fff; }
+    .warning { color: #d9534f; font-weight: bold; }
+    #monthlySummary { font-size: 1.1em; padding: 10px; background-color: #eef; border-radius: 4px; }
+    /* ADDED: Style for the chart container */
+    #chartContainer { margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h2>💰 Expense Tracker</h2>
+  <input type="number" id="amount" placeholder="Amount (₹)" />
+  <select id="category">
+    <option disabled selected value="">Select Category</option>
+    <option value="Food">🍛 Food</option>
+    <option value="Shopping">🛍️ Shopping</option>
+    <option value="Travel">✈️ Travel</option>
+    <option value="Bills">📄 Bills</option>
+    <option value="Others">📝 Others</option>
+  </select>
+  <button id="addBtn">Add Expense</button>
+
+  <h3>📋 Expenses</h3>
+  <div id="expenseList"></div>
+
+  <h3>📅 Monthly Summary</h3>
+  <p id="monthlySummary"></p>
+
+  <div id="chartContainer">
+    <h3>📊 Category Breakdown</h3>
+    <canvas id="expenseChart"></canvas>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
